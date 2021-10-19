@@ -54,3 +54,9 @@ Working solutions can be found here
 Not handled here:
 
 - Add Network Access Control List (NACL) to private subnet allowing inbound traffic only from NLBs public subnet and from other Quorum nodes public IP addresses.
+
+## Known Issues
+
+- Annotations not applied/visible in Kubernetes and/or errors on deploy via kubectl like `error: unable to decode "service.yaml": resource.metadataOnlyObject.ObjectMeta: v1.ObjectMeta.Annotations: ReadString: expects " or n, but found f, error found in #10 byte of ...|enabled":false,"serv|..., bigger context ...|load-balancer-cross-zone-load-balancing-enabled":false,"service.beta.kubernetes.io/aws-load-balancer|...`
+  
+  **Solution:** Check if annotation values are valid YAML. E.g. Invalid: "myannotation": false  - Valid: "myannotation": "false"

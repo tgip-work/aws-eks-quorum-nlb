@@ -80,7 +80,7 @@ service:
     service.beta.kubernetes.io/aws-load-balancer-subnets: eks-ireland-1-vpc-public-eu-west-1a
     
     # Only set to true if NLBs subnet is in a different availability zone than the zone affinity of the deployment.
-    service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: false
+    service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "false"
     
     # 1. Load Balancer Proxy Protocol does not work for HTTP based workload!
     # 2. We do not need the Load Balancer Proxy Protocol in our use case, therefore we do not enable it
